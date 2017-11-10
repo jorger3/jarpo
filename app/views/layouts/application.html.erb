@@ -6,9 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  </head>
+ </head>
 
 	<body class="skin-blue sidebar-mini   pace-done pace-done" style="height: auto; min-height: 100%;">
 		<div class="pace  pace-inactive pace-inactive">
@@ -21,12 +19,18 @@
 
 		<!-- Site wrapper -->
 		<div class="wrapper" style="height: auto; min-height: 100%;">
-			<%= render 'layouts/header' %>
-			<%= render 'layouts/sidebar' %>
+			<%= render 'shared/header' %>
+			<%= render 'shared/sidebar' %>
+			<% if notice %>
+			  <p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+			  <p class="alert alert-danger"><%= alert %></p>
+			<% end %>
 			<%= yield %>
-			<%= render 'layouts/footer' %>
-			<%= render 'layouts/rightbar' %>
-			<%= render 'layouts/scripts' %>
+			<%= render 'shared/footer' %>
+			<%= render 'shared/rightbar' %>
+			<%= render 'shared/scripts' %>
 		</div>
   	</body>
 </html>
