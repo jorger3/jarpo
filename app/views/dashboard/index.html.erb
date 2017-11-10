@@ -1,6 +1,19 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper" style="min-height: 1170px;">
 <!-- Content Header (Page header) -->
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+		<div class="col-md-3">
+			<br>
+			<% if notice %>
+				<p class="alert alert-success"><%= notice %></p>
+			<% end %>
+			<% if alert %>
+				<p class="alert alert-danger"><%= alert %></p>
+			<% end %>
+		</div>
+	</div>
 	<section class="content-header">
 	  <h1>
 	    Pace page
